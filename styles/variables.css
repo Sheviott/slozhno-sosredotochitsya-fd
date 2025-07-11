@@ -1,4 +1,37 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --padding-content-block: 0.5em;
+  --padding-content-inline: 0.5em;
+  --font-main-size: 18px;
+
+  /* цвета */
+  --accent-color: #FF0070;
+  --primary-color: #000028;
+  --secondary-color: #F1B2CE;
+  --tertiary-color: #db00ff;
+
+  /* назначения цветов */
+  /* .page */
+  --background-page-color: var(--primary-color);
+  --background-page-image: url(../images/cover-image-dark.png);
+  /* text content */
+  --text-content-color: var(--secondary-color);
+  --text-title-color: var(--accent-color);
+  --text-subtitle-color: var(--accent-color);
+  /* .title-decor */
+  --background-title-decor-color: var(--accent-color);
+  --text-title-decor-color: var(--primary-color);
+  /* .focus-decore */
+  --focus-color: var(--tertiary-color);
+  /* .menu */
+  --menu-list-color: var(--accent-color);
+  /* design */
+  --border-color: var(--accent-color);
+  --text-shadow-color: var(--accent-color);
+}
+
+@media (width >=768px) {
+  :root {
+    --padding-content-block: 1.1em;
+    --padding-content-inline: 1.1em;
+  }
+}

@@ -1,16 +1,77 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  /* цвета */
+  --accent-color: #ff8dcb;
+  --primary-color: #353430;
+  --secondary-color: #ffc2e6;
+
+  /* .page */
+  --background-page-color: var(--primary-color);
+  --background-page-image: url(../images/cover-image-light.png);
+  /* text content */
+  --text-content-color: var(--primary-color);
+  --text-title-color: var(--primary-color);
+  --text-subtitle-color: var(--accent-color);
+  /* .title-decor */
+  --background-title-decor-color: var(--accent-color);
+  --text-title-decor-color: var(--primary-color);
+  /* .focus-decore */
+  --focus-color: var(--secondary-color);
+  /* .menu */
+  --menu-list-color: var(--primary-color);
+  /* design */
+  --border-color: var(--primary-color);
+  --text-shadow-color: var(--accent-color);
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* цвета */
+    --accent-color: #ff8dcb;
+    --primary-color: #353430;
+    --secondary-color: #ffc2e6;
+
+    /* .page */
+    --background-page-color: var(--primary-color);
+    --background-page-image: url(../images/cover-image-light.png);
+    /* text content */
+    --text-content-color: var(--primary-color);
+    --text-title-color: var(--primary-color);
+    --text-subtitle-color: var(--accent-color);
+    /* .title-decor */
+    --background-title-decor-color: var(--accent-color);
+    --text-title-decor-color: var(--primary-color);
+    /* .focus-decore */
+    --focus-color: var(--secondary-color);
+    /* .menu */
+    --menu-list-color: var(--primary-color);
+    /* design */
+    --border-color: var(--primary-color);
+    --text-shadow-color: var(--accent-color);
+  }
+
+  .decorated-zone__rec {
+    visibility: hidden;
+    display: none;
+  }
+
+  .header__title {
+    -webkit-text-stroke: unset;
+  }
+
+  .header__theme-menu-button:hover {
+    outline: 1px solid #35343066;
+  }
+}
+
+.theme-light .page .decorated-zone__rec {
+  visibility: hidden;
+  display: none;
+}
+
+.theme-light .page .header__title {
+  -webkit-text-stroke: unset;
+}
+
+.theme-light .page .header__theme-menu-button:hover {
+  outline: 1px solid #35343066;
 }
