@@ -15,8 +15,6 @@
 }
 
 .page {
-  padding-inline: var(--padding-content-inline);
-  padding-block: var(--padding-content-block);
   font-family: "IBM Plex mono", sans-serif;
   font-size: var(--font-main-size);
   background-color: var(--background-page-color);
@@ -28,11 +26,13 @@
 }
 
 .header {
+  padding-inline: var(--padding-content-inline);
+  padding-block: var(--padding-content-block);
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: 1fr 30% 1fr;
-  block-size: calc(100dvh - var(--padding-content-block) * 2);
-  min-block-size: calc(668px - var(--padding-content-block) * 2);
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .decorated-zone {
@@ -48,16 +48,16 @@
 }
 
 .decorated-zone::after {
-  top: 0;
-  left: 100%;
+  top: var(--padding-content-block);
+  left: calc(100% - var(--padding-content-inline)) ;
   border-inline-end: 1px solid var(--border-color);
   border-block-start: 1px solid var(--border-color);
   transform: translate(-100%, 0);
 }
 
 .decorated-zone::before {
-  bottom: 0;
-  left: 0;
+  bottom: var(--padding-content-block);
+  left: var(--padding-content-inline);
   border-inline-start: 1px solid var(--border-color);
   border-block-end: 1px solid var(--border-color);
 }
@@ -120,7 +120,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid #FF007066;
+  outline: 1px solid #ff007066;
 }
 
 .header__theme-menu-button_active {
@@ -145,6 +145,8 @@
 .main {
   padding-block-start: 2.7em;
   padding-block-end: 2.7em;
+  padding-inline: var(--padding-content-inline);
+  
 }
 
 .content-section {
@@ -207,11 +209,7 @@
   margin-block-end: 10px;
 }
 
-.content__card-title~.content__card>.content__card-subtitle {
-  margin-block-end: 1em;
-}
-
-.content__card-title~.content__card>.content__card-subtitle {
+.content__card-title ~ .content__card > .content__card-subtitle {
   margin-block-end: 1em;
 }
 
@@ -236,8 +234,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  block-size: calc(100dvh - var(--padding-content-block) * 2);
-  min-block-size: calc(668px - var(--padding-content-block) * 2);
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .footer__title {
@@ -299,8 +297,6 @@
     grid-column: span 2;
     grid-row: span 2;
   }
-
-
 }
 
 @media (width >=1024px) {
@@ -317,7 +313,7 @@
     grid-auto-rows: min-content 55% 1fr;
   }
 
-  .content__card-title~.content__card>.content__card-subtitle {
+  .content__card-title ~ .content__card > .content__card-subtitle {
     margin-block-end: 1.3em;
   }
 
@@ -338,5 +334,13 @@
   .footer__title {
     align-self: center;
   }
-
 }
+
+@media (pointer: coarse) {
+  .header {
+    block-size: 100dvh;
+  }
+  .footer {
+    block-size: 100dvh;
+  }
+} 
