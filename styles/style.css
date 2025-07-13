@@ -117,6 +117,8 @@
   padding-inline: 15px;
   text-transform: lowercase;
   background-color: transparent;
+  border-block-end: 1px solid transparent;
+  
 }
 
 .header__theme-menu-button:hover {
@@ -181,23 +183,13 @@
   text-shadow: 2px 2px var(--text-shadow-color);
 }
 
-.content__card-link::before {
-  content: "";
-  position: absolute;
-  inset: auto auto -1px auto;
-  opacity: 0;
-  background-color: var(--text-content-color);
-  transition: all 0.2s ease 0s;
-  inline-size: 100%;
-  block-size: 2px;
-}
 
-.content__card-link:hover::before {
-  opacity: 1;
+.content__card-link:hover{
+  border-bottom: 1px solid  var(--text-content-color)
 }
 
 .content__card-link:focus-visible {
-  outline: 1px solid var(--border-color);
+  outline: 1px solid var(--text-content-color);
 }
 
 .content__card-subtitle {
@@ -226,6 +218,7 @@
 .gallery__img {
   object-fit: cover;
   inline-size: 100%;
+  block-size: 100%;
 }
 
 .footer {
@@ -251,8 +244,6 @@
   }
 
   .main {
-    padding-inline-start: 2em;
-    padding-inline-end: 0.2em;
     padding-block-start: 3.4em;
     padding-block-end: 3em;
   }
@@ -260,15 +251,17 @@
   .content-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-block-end: 78px;
+    gap: 30px;
+    row-gap: 20px;
+    margin-block-end: 80px;
   }
 
   .content__card-title {
     margin: 0;
+    word-spacing: -4px;
   }
 
-  .content-section:nth-child(2) .grid-item {
+  .grid-item.grid-item-columns {
     grid-column: span 3;
   }
 
@@ -305,10 +298,6 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .main {
-    padding-inline-start: 1em;
-    padding-inline-end: 1em;
-  }
 
   .header__theme-menu-list {
     flex-flow: row;
@@ -319,7 +308,7 @@
   }
 
   .content__card-title ~ .content__card > .content__card-subtitle {
-    margin-block-end: 1.3em;
+    margin-block-end: 1em;
   }
 
   .header__text {
@@ -332,7 +321,7 @@
     align-self: flex-start;
   }
 
-  .content-section:nth-child(2) .grid-item {
+  .grid-item.grid-item-columns {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -340,9 +329,13 @@
     align-self: center;
   }
 
-  .content__card-text {
-    word-spacing: 0px;
-  }
+.content__card-text {
+  word-spacing: 0px;
+}
+    .content__card-title {
+        margin: 0;
+        word-spacing: 0px;
+    }
 }
 
 @media (pointer: coarse) {

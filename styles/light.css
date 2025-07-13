@@ -3,9 +3,10 @@
   --accent-color: #ff8dcb;
   --primary-color: #353430;
   --secondary-color: #ffc2e6;
-
+  --tertiary-color: #fff1f7;
+  
   /* .page */
-  --background-page-color: var(--primary-color);
+  --background-page-color: var(--tertiary-color);
   --background-page-image: url(../images/cover-image-light.png);
   /* text content */
   --text-content-color: var(--primary-color);
@@ -31,7 +32,7 @@
     --secondary-color: #ffc2e6;
 
     /* .page */
-    --background-page-color: var(--primary-color);
+    --background-page-color: var(--tertiary-color);
     --background-page-image: url(../images/cover-image-light.png);
     /* text content */
     --text-content-color: var(--primary-color);
