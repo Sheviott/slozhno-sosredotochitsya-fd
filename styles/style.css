@@ -114,11 +114,10 @@
 
 .header__theme-menu-button {
   border: none;
+  border-block-end: 1px solid transparent;
   padding-inline: 15px;
   text-transform: lowercase;
   background-color: transparent;
-  border-block-end: 1px solid transparent;
-  
 }
 
 .header__theme-menu-button:hover {
@@ -147,7 +146,7 @@
 .main {
   padding-inline: var(--padding-content-inline);
   padding-block-start: 2.25em;
-  padding-block-end: 2em;
+  padding-block-end: 2.2em;
 }
 
 .content-section {
@@ -183,9 +182,8 @@
   text-shadow: 2px 2px var(--text-shadow-color);
 }
 
-
-.content__card-link:hover{
-  border-bottom: 1px solid  var(--text-content-color)
+.content__card-link:hover {
+  border-bottom: 1px solid var(--text-content-color);
 }
 
 .content__card-link:focus-visible {
@@ -201,7 +199,7 @@
   margin-block-end: 10px;
 }
 
-.content__card-title ~ .content__card > .content__card-subtitle {
+.content__card-title~.content__card>.content__card-subtitle {
   margin-block-end: 1em;
 }
 
@@ -212,13 +210,14 @@
 
 .gallery__list {
   display: grid;
-  gap: 5px;
+  gap: 10px;
 }
 
 .gallery__img {
   object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
+  display: block;
 }
 
 .footer {
@@ -245,7 +244,11 @@
 
   .main {
     padding-block-start: 3.4em;
-    padding-block-end: 3em;
+    padding-block-end: 3.3em;
+  }
+
+  .gallery__title {
+    margin-block-end: 1em;
   }
 
   .content-section {
@@ -298,7 +301,6 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-
   .header__theme-menu-list {
     flex-flow: row;
   }
@@ -307,7 +309,7 @@
     grid-auto-rows: min-content 55% 1fr;
   }
 
-  .content__card-title ~ .content__card > .content__card-subtitle {
+  .content__card-title~.content__card>.content__card-subtitle {
     margin-block-end: 1em;
   }
 
@@ -329,13 +331,14 @@
     align-self: center;
   }
 
-.content__card-text {
-  word-spacing: 0px;
-}
-    .content__card-title {
-        margin: 0;
-        word-spacing: 0px;
-    }
+  .content__card-text {
+    word-spacing: 0px;
+  }
+
+  .content__card-title {
+    margin: 0;
+    word-spacing: 0px;
+  }
 }
 
 @media (pointer: coarse) {
